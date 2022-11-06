@@ -1,3 +1,13 @@
+# Backend APIs & AI Program
+- Our program provides two APIs: 
+    1. found item API (for F-users)
+    2. lost item API  (for L-users)
+
+- Both APIs have similar flow as follows:
+    1. When F-user (L-user) requests to the backend server's found (lost) item API, the server proccess the following classifications.
+        1. Query the MySQL Database that matches the object's name and category
+        2. With the data, we calculate the similarity of date and location
+
 # Image Recognition Program
 - This program will be used as the final classification for our system. 
 - Input: 
