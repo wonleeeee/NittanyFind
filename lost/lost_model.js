@@ -7,7 +7,7 @@ const getMatchQry =
 
 const insertLostQry = 
     "INSERT INTO lostfound.lost VALUE " +
-    "(NULL, ?, ?, ?, ?, ?, NULL, 0, NULL)"
+    "(NULL, ?, ?, ?, ?, ?, NULL, 0, NULL, ?)"
 
 lost.findCategMatch = function findMatch(category, model, callback) {
     info = [category, model];
@@ -18,8 +18,8 @@ lost.findCategMatch = function findMatch(category, model, callback) {
     })
 }
 
-lost.insertLost = function insertLost (name, category, date, lox, loy, callback) {
-    info = [name, category, date, lox, loy];
+lost.insertLost = function insertLost (name, category, date, lox, loy, des, callback) {
+    info = [name, category, date, lox, loy, des];
     config.db.query(insertLostQry, info, (err, result) => {
         if(err) callback (err, null);
 
