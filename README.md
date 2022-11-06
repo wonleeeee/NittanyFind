@@ -1,3 +1,10 @@
+# Backend APIs & AI Program
+- Our program provides two APIs: 
+    1. found item API (F-users will use this API)
+    2. lost item API  (L-users will use this API)
+
+- Both APIs have similar flow as follows:
+    1. F-user (L-user) requests 
 # Image Recognition Program
 - This program will be used as the final classification for our system. 
 - Input: 
