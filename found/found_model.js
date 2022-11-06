@@ -4,7 +4,7 @@ var found = module.exports;
 const getMatchQry = "SELECT id, date, locationx, locationy, luid, status, picture "
 + "FROM lostfound.lost WHERE category = ? AND name = ? AND status = 0";
 
-const insertfoundQry = "INSERT INTO lostfound.found VALUES (?, ?, ?, ?, ?, NULL, 0, NULL)";
+const insertfoundQry = "INSERT INTO lostfound.found VALUE (NULL, ?, ?, ?, ?, ?, NULL, 0, NULL,?)";
 
 found.findCategMatch = function findMatch(category, model, callback) {
     info = [category, model];
@@ -24,7 +24,7 @@ found.insertfound = function insertfound(name, category, date, locx, locy, callb
 }
 
 
-function compareDate(LDate, FDate) {
+found.compareDate = function compareDate(LDate, FDate) {
     const lDate = new Date(LDate)
     const fDate = new Date(FDate) 
     console.log(LDate, FDate);
